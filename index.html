@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>鐳哥烤雞年夜飯特別宣傳</title>
+    <title>過年最佳選擇-鐳哥烤雞</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +14,7 @@
         }
         .container {
             width: 80%;
+            max-width: 1200px; /* 防止容器在大屏幕上過寬 */
             margin: auto;
             overflow: hidden;
         }
@@ -23,59 +25,27 @@
             min-height: 70px;
             border-bottom: #000 3px solid;
         }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            overflow: hidden;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header #branding h1 {
-            margin: 0;
-            color: #000; /* 修改顏色為黑色 */
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        /* 新增圖片樣式 */
-        .product-image {
-            position: fixed;
-            right: 10px;  /* 右下角定位 */
-            bottom: 10px;
-            max-width: 150px;  /* 可以調整圖片大小 */
-            border: 2px solid #fff;  /* 如需要，可以為圖片添加邊框 */
-            box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);  /* 添加陰影效果 */
-        }
         .main-content {
             background-color: #333333; /* 深灰色背景 */
-            padding: 20px;
             color: #FFFFFF; /* 白色文字 */
+            padding: 20px;
+            border-radius: 5px; /* 輕微圓角 */
+        }
+        .product-image {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            max-width: 150px; /* 適合手機屏幕大小 */
+            border: 2px solid #fff;
+            box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+        }
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 95%; /* 在小屏幕上增加寬度 */
+            }
+            .product-image {
+                max-width: 100px; /* 在小屏幕上調整圖片大小 */
+            }
         }
     </style>
 </head>
