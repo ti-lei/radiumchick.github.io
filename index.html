@@ -75,6 +75,7 @@
             object-fit: cover; /* 確保影片不會被擠壓 */
             z-index: -1; /* 影片置於背景層 */
         }
+
         footer {
             position: relative;
             background-color: #333;
@@ -87,41 +88,67 @@
 
         footer video {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 200px; /* 手機版預設高度 */
-            width: auto;
-            object-fit: contain;
-            z-index: 0;
+            top: 50%; /* 垂直置中 */
+            left: 0; /* 與文字的左邊界對齊 */
+            transform: translateY(-50%); /* 垂直方向居中 */
+            width: 80%; /* 使用與 .container 相同的寬度 */
+            max-width: 1200px; /* 限制最大寬度，避免過寬 */
+            height: auto; /* 維持影片比例 */
+            object-fit: cover; /* 保持比例並裁剪多餘部分 */
+            z-index: 0; /* 放置在背景層 */
         }
 
-        /* 電腦版螢幕尺寸 */
-        @media screen and (min-width: 768px) {
-            footer {
-                min-height: 400px;
-            }
-            
-            footer video {
-                height: 400px; /* 電腦版更大的高度 */
-            }
-        }
 
-        /* 大螢幕版本 */
-        @media screen and (min-width: 1200px) {
-            footer {
-                min-height: 500px;
-            }
-            
-            footer video {
-                height: 500px; /* 大螢幕更大的高度 */
-            }
-        }
 
         .footer-content {
             position: relative;
-            z-index: 1;
+            z-index: 1; /* 確保文字在影片上方 */
+            padding: 10px;
+            text-align: left; /* 讓文字左對齊 */
         }
+
+
+        @media (max-width: 768px) {
+            footer {
+                min-height: 300px; /* 手機適配更高的 footer */
+            }
+
+            footer video {
+                width: 66vw; /* 設定為螢幕寬度的 2/3 */
+                height: 100%; /* 確保影片高度填滿 footer */
+                top: 50%; /* 垂直置中 */
+                left: 50%; /* 水平置中 */
+                transform: translate(-50%, -50%);
+                object-fit: contain; /* 保持比例完整顯示影片 */
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            footer {
+                min-height: 400px; /* 桌面版本更高的 footer */
+            }
+
+            footer video {
+                height: auto;
+                width: auto;
+                left: 20%;
+                max-height: 400px; /* 桌面版的影片高度限制 */
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            footer {
+                min-height: 500px; /* 大螢幕的 footer 高度 */
+            }
+
+            footer video {
+                height: auto;
+                left: 20%;
+                max-height: 500px; /* 大螢幕影片高度限制 */
+            }
+        }
+
+
     </style>
 </head>
 <body>
